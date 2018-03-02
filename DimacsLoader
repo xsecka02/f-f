@@ -1,0 +1,23 @@
+module DimacsLoader where
+
+-- ---- DATA TYPE DEFINITIONS ---- -- 
+
+data NodeType = Source | Sink | Normal deriving (Show)
+
+data Arc = Arc { source :: Int  
+               , target :: Int  
+               , capacity :: Int  
+               , flow :: Int
+               } deriving (Show)
+
+data Node = Node { id :: Int
+				 , neighbours :: [Arc]
+				 , ntype :: NodeType
+				 } deriving (Show)
+
+data Net = Net { nodes :: [Node]
+			   , maxFlow :: Int
+			   } deriving (Show)
+   
+-- ---- ----- FUNCTIONS ----- ---- -- 
+
